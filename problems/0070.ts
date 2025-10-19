@@ -15,3 +15,25 @@ function climbStairs(n: number): number {
 
   return one;
 }
+
+// Dynamic Programming (Top Down) solution
+
+function climbStairs2(n: number): number {
+  const cache: { [key: number]: number } = {};
+
+  function climb(i: number) {
+    if (cache[i]) {
+      return cache[i];
+    }
+    if (i > n) {
+      return 0;
+    }
+    if (i === n) {
+      return 1;
+    }
+
+    cache[i] = climb(i + 1) + climb(i + 2);
+    return cache[i];
+  }
+  return climb(0);
+}
