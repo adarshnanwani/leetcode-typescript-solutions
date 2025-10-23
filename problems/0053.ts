@@ -3,11 +3,11 @@
 // Link: https://leetcode.com/problems/maximum-subarray/description/
 // Date: 22 Oct 2025
 
-// Note: Kadene's Algorith
+// Note: Kadene's Algorithm
 // Time Complexity - O(n)
 
 function maxSubArray(nums: number[]): number {
-  let maxSum = -Infinity;
+  let maxSum = -Infinity; // to account for the case if every value in the array is negative
   let currentSum = 0;
 
   for (let num of nums) {
